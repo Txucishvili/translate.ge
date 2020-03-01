@@ -35,13 +35,11 @@ body {
 
 
 a {
-  &:link {
-    text-decoration: none;
-    color: $color-gray-2;
+  text-decoration: none;
+  color: $color-gray-2;
 
-    &:hover {
-      color: $color-gray-3;
-    }
+  &:hover {
+    color: $color-gray-3;
   }
 }
 

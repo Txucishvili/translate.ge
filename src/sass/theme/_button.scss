@@ -1,5 +1,7 @@
 .btn {
-
+  &[a] {
+    color: red;
+  }
   &--simple {
     outline: none;
     padding: 22px 77px;
@@ -17,6 +19,7 @@
     border: none;
 
     &:hover {
+      color: $oc-white;
       background-color: darken($color-blue, 8%);
     }
   }
