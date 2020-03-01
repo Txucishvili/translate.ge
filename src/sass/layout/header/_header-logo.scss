@@ -1,0 +1,73 @@
+.header {
+  .logo {
+    &--area {
+      height: 100%;
+      width: 100%;
+      @include flex-all;
+    }
+
+    &--wrap {
+      width: 210px;
+      height: 55px;
+      overflow: hidden;
+      @include flex-all;
+      position: relative;
+
+      @include max-min(max px($device-tablet)) {
+        width: 55px;
+      }
+    }
+
+    &--el {
+      position: absolute;
+      top: 0;
+      left: 0;
+      max-height: 100%;
+      height: 100%;
+      width: 210px;
+
+      svg {
+        max-height: 100%;
+        max-width: 100%;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+    }
+
+    .deviceHide {
+      @include max-min(max px($device-tablet)) {
+        display: none;
+      }
+    }
+
+    &--view {
+      &--sm {
+        @include size(55px);
+        display: none;
+
+        @include max-min(max px($device-tablet)) {
+          @include flex-all;
+          padding: 10px;
+
+          img {
+            height: 100%;
+          }
+        }
+      }
+
+      &--xl {
+        width: 210px;
+
+        @include max-min(max px($device-tablet)) {
+          display: none;
+        }
+      }
+    }
+
+
+  }
+}
+

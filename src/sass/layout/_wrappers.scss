@@ -1,0 +1,23 @@
+.wrapper {
+  &--sm {
+    max-width: px($wrapper-size);
+    margin: 0 auto;
+
+    @include max-min(max px($wrapper-size + ($layout-h-divide * 2))) {
+      padding: 0 px($layout-h-divide);
+    }
+
+  }
+  &--xl {
+    max-width: px($wrapper-size-xl);
+    margin: 0 auto;
+
+    @include max-min(max px($wrapper-size-xl + ($layout-h-divide * 2))) {
+      padding: 0 px($layout-h-divide);
+    }
+
+  }
+  &--inherit {
+    height: inherit;
+  }
+}

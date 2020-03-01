@@ -1,0 +1,29 @@
+.btn {
+
+  &--simple {
+    outline: none;
+    padding: 22px 77px;
+    color: $oc-white;
+    font-family: $BPG-Arial;
+    font-size: 15px;
+    line-height: 15px;
+    font-weight: 400;
+    height: 60px;
+    border-radius: 44px;
+    background-color: $color-blue;
+    @include flex-all;
+    cursor: pointer;
+    transition: all .125s ease-in-out;
+    border: none;
+
+    &:hover {
+      background-color: darken($color-blue, 8%);
+    }
+  }
+
+  &--clear {
+    background-color: transparent;
+    border: none;
+    outline: none;
+  }
+}

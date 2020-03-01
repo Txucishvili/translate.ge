@@ -1,0 +1,60 @@
+.layout {
+  &--search {
+    &--suggests {
+      overflow-y: auto;
+      -ms-overflow-style: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .list {
+        @include flex;
+        flex-wrap: wrap;
+
+        @include max-min(max px($device-tablet)) {
+          width: fit-content;
+          white-space: nowrap;
+          flex-wrap: nowrap;
+        }
+
+        li {
+          margin: 0 15px 7px 0;
+
+          a {
+            @include flex-all;
+            padding: 14px 20px;
+            height: 45px;
+            border-radius: 28px;
+            background-color: rgba(86, 159, 236, 0.1);
+            color: $color-blue;
+            font-family: $SamsungSans-Regular;
+            font-size: 14px;
+            font-weight: 400;
+            transition: all .125s ease-in-out;
+
+            @include max-min(max px($device-tablet)) {
+              height: 33px;
+              padding: 12px 15px;
+              font-size: 11px;
+            }
+
+            &:hover {
+              color: darken($color-blue, 9%);
+              background-color: rgba(86, 159, 236, 0.25);
+            }
+          }
+
+
+          @include max-min(max px($device-tablet)) {
+            margin-right: 5px;
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}

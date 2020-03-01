@@ -1,0 +1,40 @@
+// @init
+
+// fonts
+$SamsungSans-path: '../assets/fonts/SamsungSans/';
+$SamsungSans-Light: 'SamsungSans-Light';
+$SamsungSans-Regular: 'SamsungSans-Regular';
+$SamsungSans-Medium: 'SamsungSans-Medium';
+$SamsungSans-Bold: 'SamsungSans-Bold';
+
+$BPG-Arial: 'BPG Arial';
+
+// theme
+$wrapper-size: 1100;
+$wrapper-size-xl: 1400;
+
+$layout-h-divide: 17;
+$header-height: 81;
+
+// devices
+$device-sm: 320;
+$device-md: 425;
+$device-tablet: 768;
+$device-xs: 1024;
+
+// fonts
+
+@function px($val) {
+  @return $val + px;
+}
+
+// colors
+$color-blue: #569fec;
+$color-gray-1: #f1f3f5;
+$color-gray-2: #787d88;
+$color-gray-3: #121b23;
+$color-gray-4: #636363;
+$color-gray-5: #dee2e6;
+$color-red: #ed6a67;
+
+$search-result-device-ind: 128;

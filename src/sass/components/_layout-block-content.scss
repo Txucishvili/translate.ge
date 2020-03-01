@@ -1,0 +1,105 @@
+.layout {
+  &--content {
+
+    &.blocks-content {
+      @include flex;
+      padding-top: 110px;
+
+      @include max-min(max px($device-tablet - $search-result-device-ind)) {
+        padding-top: 50px;
+      }
+
+      .block-items {
+        @include flex;
+        width: 100%;
+        padding-bottom: 30px;
+
+        @include max-min(max px($device-tablet - $search-result-device-ind)) {
+          @include flex-direction(column);
+        }
+
+        .block-item {
+          &--position {
+            padding: 30px;
+            min-height: 181px;
+            border-radius: 15px;
+            border: 1px solid #dee2e6;
+            flex: 1;
+            position: relative;
+            transition: all .125s ease-in-out;
+
+            @include max-min(max px($device-xs)) {
+              padding: 20px;
+            }
+
+            .text {
+              width: 100%;
+              max-width: 56%;
+              color: $color-gray-3;
+              font-family: $BPG-Arial;
+              font-size: 15px;
+              font-weight: 400;
+              line-height: 26px;
+              word-break: break-word;
+
+              @include max-min(max px($device-xs)) {
+                max-width: 60%;
+              }
+              @include max-min(max px($device-tablet)) {
+                max-width: 100%;
+              }
+              @include max-min(max px($device-tablet - $search-result-device-ind)) {
+                font-size: 12px;
+              }
+            }
+
+            .image-area {
+              position: absolute;
+              bottom: 30px;
+              right: 30px;
+              height: 130px;
+              max-width: 235px;
+              display: flex;
+              align-items: flex-end;
+
+              img {
+                width: 100%;
+                display: block;
+              }
+
+              @include max-min(max px($device-tablet)) {
+                max-width: 185px;
+                bottom: 20px;
+                right: 20px;
+              }
+            }
+
+            &:nth-child(even) {
+              margin-left: 50px;
+
+
+
+
+              @include max-min(max px($device-tablet)) {
+                margin-left: 25px;
+              }
+
+              @include max-min(max px($device-tablet - $search-result-device-ind)) {
+                margin-left: 0;
+                margin-top: 20px;
+              }
+            }
+
+            &:hover {
+              background-color: $oc-white;
+              border-color: $oc-white;
+            }
+          }
+
+        }
+
+      }
+    }
+
+  }
+}

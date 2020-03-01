@@ -1,0 +1,147 @@
+.layout {
+  &--search {
+    &--results {
+      margin-top: 50px;
+      margin-bottom: 20px;
+
+      .search-results {
+        &--main {
+          @include flex;
+          @include flex-direction(column);
+
+          ul.num-list {
+            padding-left: 20px;
+          }
+        }
+
+        &--item {
+          @include flex;
+          margin-bottom: 20px;
+
+          @include max-min(max px($device-tablet - $search-result-device-ind)) {
+            position: relative;
+            @include flex-direction(column);
+          }
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          &:hover {
+            .name {
+              color: $color-blue !important;
+            }
+          }
+        }
+
+        &--title {
+          width: 195px;
+          font-family: $SamsungSans-Regular;
+          padding-top: 23px;
+          padding-bottom: 10px;
+
+          .name {
+            color: $color-gray-3;
+            font-family: inherit;
+            font-size: 16px;
+            line-height: 21px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            transition: all .125s ease-in-out;
+          }
+
+          .desc {
+            color: $color-gray-2;
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 400;
+          }
+        }
+
+        &--content {
+          min-height: 80px;
+          padding: 32px 20px;
+          border-radius: 15px;
+          border: 1px solid #dee2e6;
+          flex: 1;
+          position: relative;
+          transition: all .125s ease-in-out;
+
+          @include max-min(max px($device-tablet - $search-result-device-ind)) {
+            padding: 13px 15px;
+            position: unset;
+            border-radius: 5px;
+            min-height: 40px;
+          }
+
+          .text-area {
+            color: $color-gray-3;
+            font-family: $BPG-Arial;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.28px;
+            line-height: 27px;
+          }
+
+          .button-area {
+            &--position {
+              position: absolute;
+              top: 30px;
+              right: 30px;
+
+              @include max-min(max px($device-tablet - $search-result-device-ind)) {
+                right: 0px;
+              }
+
+              .button-list {
+                @include flex;
+
+                li {
+                  margin-right: 40px;
+
+                  @include max-min(max px($device-tablet - $search-result-device-ind)) {
+                    margin-right: 20px;
+                  }
+
+                  a {
+                    @include flex-all;
+
+                    .icon {
+                      @include size(20px);
+                      @include flex-all;
+
+                      svg {
+                        height: 100%;
+
+                        path {
+                          fill: $color-gray-2;
+                        }
+                      }
+                    }
+
+                    &:hover {
+                      svg {
+                        path {
+                          fill: $color-gray-3;
+                        }
+                      }
+                    }
+                  }
+
+                  &:last-child {
+                    margin-right: 0;
+                  }
+                }
+              }
+            }
+          }
+
+          &:hover {
+            background-color: $oc-white;
+            border-color: $oc-white;
+          }
+        }
+      }
+    }
+  }
+}

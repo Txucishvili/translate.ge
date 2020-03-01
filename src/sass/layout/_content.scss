@@ -1,0 +1,7 @@
+.content-outline {
+  padding-top: 90px;
+
+  @include max-min(max px($device-tablet - $search-result-device-ind)) {
+    padding-top: 42px;
+  }
+}

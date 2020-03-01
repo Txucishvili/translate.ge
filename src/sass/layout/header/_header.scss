@@ -1,0 +1,39 @@
+$header-device-height: px(40);
+
+.header {
+  &--position {
+    width: 100%;
+    height: px($header-height);
+    background-color: $oc-white;
+    margin-top: 0;
+    transition: margin-top .125s ease-in-out;
+    z-index: 2;
+    position: relative;
+  }
+
+  &--content {
+    height: inherit;
+    @include flex;
+    @include align-items(center);
+
+  }
+
+  &--left {
+    height: inherit;
+  }
+
+  &--right {
+    height: inherit;
+    margin-left: auto;
+  }
+
+  &--device {
+    display: none;
+
+    @include max-min(max px($device-tablet)) {
+      @include flex-all;
+      @include size(100%);
+    }
+  }
+}
+

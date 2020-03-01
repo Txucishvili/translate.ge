@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 18px;
+  font-family: $SamsungSans-Regular;
+  font-size: 16px;
+  color: $color-gray-3;
+  background-color: $color-gray-1;
+}
+
+
+.head-title {
+  color: $color-gray-3;
+  font-family: $SamsungSans-Regular;
+  font-size: 28px;
+  line-height: 38px;
+  font-weight: 400;
+
+  &--sm {
+
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex {
+  @include flex;
+}
+
+.right-area {
+  //margin-right: auto;
+}
+
+
+a {
+  &:link {
+    text-decoration: none;
+    color: $color-gray-2;
+
+    &:hover {
+      color: $color-gray-3;
+    }
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.__layout {
+  &--hide {
+    opacity: 0;
+    @include size(0px);
+    overflow: hidden;
+  }
+}
+
+ul.num-list {
+  li {
+    list-style: decimal;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+.devHide {
+}

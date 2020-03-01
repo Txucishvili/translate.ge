@@ -1,0 +1,110 @@
+.layout {
+  &--translate-view {
+
+    .head-title--sm {
+      display: none;
+    }
+
+    @include max-min(max px($device-tablet - $search-result-device-ind)) {
+      .head-title--sm {
+        display: block;
+        padding-top: 21px;
+        padding-bottom: 10px;
+      }
+      .text-area.devHide {
+        display: none;
+      }
+      .desc-line {
+        padding-top: 20px;
+      }
+    }
+
+    .choose-list {
+      @include flex;
+      padding-top: 50px;
+
+      @include max-min(max px($device-tablet - $search-result-device-ind)) {
+        padding-top: 21px;
+        @include flex-direction(column);
+      }
+
+      .select-item {
+        flex: 1;
+        margin-left: 25px;
+
+        @include max-min(max px($device-tablet - $search-result-device-ind)) {
+          margin-left: 0;
+          margin-top: 16px;
+        }
+
+        select {
+          width: 100%;
+          padding: 12px;
+        }
+
+        &:first-child {
+          margin-left: 0;
+          @include max-min(max px($device-tablet - $search-result-device-ind)) {
+            margin-left: 0;
+            margin-top: 0;
+          }
+        }
+      }
+    }
+
+    .desc-line {
+      padding-top: 30px;
+      @include flex;
+      @include align-items(center);
+      color: $color-gray-2;
+      font-family: $BPG-Arial;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 24px;
+
+      .text-area {
+        max-width: 80%;
+        word-break: break-word;
+      }
+
+      @include max-min(max px($device-tablet - $search-result-device-ind)) {
+        @include flex-direction(column);
+        .right-area {
+          margin-right: initial;
+          width: 100%;
+
+          .btn-area {
+            width: inherit;
+          }
+
+          .btn {
+            height: 48px;
+            width: 100%;
+          }
+        }
+      }
+
+    }
+
+    .about-service {
+      padding-top: 190px;
+      padding-bottom: 70px;
+
+      @include max-min(max px($device-tablet - $search-result-device-ind)) {
+        padding-top: 71px;
+        padding-bottom: 71px;
+      }
+
+        .text-area {
+        color: $color-gray-3;
+        font-family: $BPG-Arial;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 33px;
+        padding-top: 30px;
+      }
+    }
+
+  }
+}
+

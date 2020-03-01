@@ -1,0 +1,122 @@
+$header-device-height: px(40);
+$switcher-btn-area-size: 375;
+$switcher-clip-path-size: 18;
+
+.header {
+  &--switcher {
+    &--content {
+      position: relative;
+      z-index: 1;
+      padding: 0 px($switcher-clip-path-size);
+    }
+
+    &--wrap {
+      min-width: px($device-sm - ($switcher-clip-path-size * 2));
+      max-width: 100%;
+      width: fit-content;
+      //min-height: 87px;
+      min-height: 48px;
+      margin: 0 auto;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      background-color: $oc-white;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      position: relative;
+
+      @include max-min(max px($device-tablet - $search-result-device-ind)) {
+        min-height: 40px;
+      }
+
+      @include max-min(min px($device-tablet - $search-result-device-ind)) {
+        min-width: px($switcher-btn-area-size);
+      }
+
+      &::after, &::before {
+        content: '';
+        background-color: inherit;
+        position: absolute;
+        top: 0;
+        @include size(px($switcher-clip-path-size));
+        clip-path: url(#myClip);
+      }
+
+      &::after {
+        left: px(-$switcher-clip-path-size);
+        transform: rotate(90deg) scaleX(-1);
+      }
+
+      &::before {
+        right: px(- $switcher-clip-path-size);
+        transform: scaleX(-1);
+      }
+    }
+
+    .switcher {
+      &--area {
+        @include flex-all;
+        height: 60px;
+
+        @include max-min(max px($device-tablet - $search-result-device-ind)) {
+          height: 36px;
+        }
+
+        //min-width: px($switcher-btn-area-size + 200); // TODO: TEMP
+      }
+
+      &--item {
+        flex: 1;
+        color: $color-gray-3;
+        font-family: $SamsungSans-Regular;
+        font-size: 15px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all .125s ease;
+        height: 100%;
+
+        @include max-min(max px($device-tablet - $search-result-device-ind)) {
+          font-size: 12px;
+        }
+
+        &:hover {
+          //background-color: rgba($color-gray-2, .2);
+          color: lighten($color-gray-2, 11%);
+        }
+
+        &--active {
+          color: $color-blue;
+
+          &:hover {
+            color: $color-blue;
+          }
+        }
+      }
+
+      &--btn {
+        cursor: pointer;
+
+        svg {
+          path {
+            transition: all .125s ease-in-out;
+          }
+        }
+
+        &:hover {
+          svg {
+            path {
+              fill: $color-blue;
+            }
+            .arrow-left {
+              //transform: translateX(-10px);
+            }
+            .arrow-right {
+              //transform: translateX(10px);
+            }
+          }
+        }
+      }
+
+    }
+
+  }
+}
+

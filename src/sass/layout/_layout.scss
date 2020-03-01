@@ -1,0 +1,30 @@
+.layout {
+  &--header-wrapper {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 55;
+    transition: all .125s ease-in-out;
+
+    @include max-min(max px($device-tablet)) {
+      &--opened {
+        //margin-top: $header-device-height;
+
+        padding-top: 40px;
+
+        .header-nav {
+          //top: 0;
+        }
+      }
+    }
+
+  }
+
+  &--wrapper {
+    visibility: visible;
+  }
+
+  &--content {
+  }
+}

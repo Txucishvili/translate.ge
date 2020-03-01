@@ -1,0 +1,10 @@
+.layout {
+  &--search {
+    &--main {
+      margin-top: 150px;
+      @include max-min(max px($device-tablet - $search-result-device-ind)) {
+        margin-top: 65px;
+      }
+    }
+  }
+}
