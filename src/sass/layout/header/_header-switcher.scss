@@ -55,6 +55,7 @@ $switcher-clip-path-size: 18;
       &--area {
         @include flex-all;
         height: 60px;
+        padding: 0 20px;
 
         @include max-min(max px($device-tablet - $search-result-device-ind)) {
           height: 36px;
