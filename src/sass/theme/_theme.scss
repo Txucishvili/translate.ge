@@ -29,6 +29,10 @@ body {
   @include flex;
 }
 
+.right-area {
+  margin-left: auto;
+}
+
 .flex-el {
   flex: 1;
 }
@@ -85,22 +89,8 @@ ul.num-list {
 .devHide {
 }
 
-.p-list {
-  @each $padd in $padding-list {
-    &--#{$padd} {
-      > * {
-        padding-top: px($padd);
-
-        &:first-child {
-          padding-top: 0;
-        }
-      }
-    }
-  }
-}
-
 .m-list {
-  @each $padd in $padding-list {
+  @each $padd in $margin-top-list {
     &--#{$padd} {
       > * {
         margin-top: px($padd);
@@ -133,8 +123,9 @@ ul.num-list {
     border-color: $color-blue;
   }
 }
+
 .margin-v {
-  @each $marg in $margins-list {
+  @each $marg in $margin-v-list {
     &--#{$marg} {
       > * {
         margin: px($marg) 0;
@@ -143,8 +134,22 @@ ul.num-list {
   }
 }
 
+.margin-t {
+  @each $padd in $margin-top-list {
+    &--#{$padd} {
+      > * {
+        margin-top: px($padd);
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
+
 .padding-h {
-  @each $padd in $paddings-list {
+  @each $padd in $padding-h-list {
     &--#{$padd} {
       > * {
         padding: 0 px($padd);
@@ -154,9 +159,17 @@ ul.num-list {
 }
 
 .padding-t {
-  @each $padd in $padding-tops {
+  @each $padd in $padding-v-range {
     &--#{$padd} {
-        padding-top: px($padd);
+      padding-top: px($padd);
+    }
+  }
+}
+
+.padding-b {
+  @each $padd in $padding-v-range {
+    &--#{$padd} {
+      padding-bottom: px($padd);
     }
   }
 }

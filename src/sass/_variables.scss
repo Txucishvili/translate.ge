@@ -41,11 +41,12 @@ $color-red: #ed6a67;
 
 $search-result-device-ind: 128;
 
-$padding-list: 20, 25, 30, 35, 40, 45;
-$margins-list: 5, 7, 9, 12, 15;
-$paddings-list: 5, 7, 9, 12, 15;
+$padding-h-size-list: 5, 7, 9, 12, 15, 20, 25, 30, 35, 40, 50, 60, 80, 90;
+$padding-h-list: 5, 7, 9, 12, 15;
+$margin-top-list: 5, 7, 9, 12, 15, 20, 25, 30, 35, 40, 50, 60, 80, 90;
+$margin-v-list: 5, 7, 9, 12, 15;
 
-$padding-tops: 30, 40, 50, 60, 80, 90;
+$padding-v-range: 30, 40, 50, 60, 80, 90;
 
 @mixin disableDeviceOutline($params: 0) {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);

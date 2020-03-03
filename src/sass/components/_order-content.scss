@@ -5,10 +5,11 @@ $device-bill-head-height: 60;
     &--content {
       @include flex;
       position: relative;
+      padding-top: 90px;
+      padding-bottom: 30px;
 
       &--padding {
-        padding-top: 90px;
-        padding-bottom: 30px;
+
       }
 
       @include max-min(max px($device-tablet)) {
