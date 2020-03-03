@@ -5,7 +5,7 @@
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+
 </head>
 <body class="theme theme--light">
 <!--region Layout header area -->
@@ -77,26 +77,21 @@
         </div>
         <div class="header--right">
           <div class="header--device">
-            <button id="deviceBugerMenu" class="btn btn--clear">
-              <svg id="SVGDoc" width="21" height="13" xmlns="http://www.w3.org/2000/svg" version="1.1"
-                   xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 21 13">
-                <g>
-                  <path d="M20.56245,0h-20.12494c-0.2415,0 -0.43751,0.19416 -0.43751,0.43335c0,0.23919 0.19601,0.43335 0.43751,0.43335h20.12498c0.2415,0 0.43751,-0.19416 0.43751,-0.43335c0,-0.23919 -0.19605,-0.43335 -0.43755,-0.43335z"
-                        fill="#121b23" fill-opacity="1"></path>
-                  <path d="M20.56245,6.06663h-20.12494c-0.2415,0 -0.43751,0.19415 -0.43751,0.43335c0,0.2392 0.19601,0.43333 0.43751,0.43333h20.12498c0.2415,0 0.43751,-0.19414 0.43751,-0.43333c0,-0.2392 -0.19605,-0.43335 -0.43755,-0.43335z"
-                        fill="#121b23" fill-opacity="1"></path>
-                  <path d="M20.56245,12.13332h-20.12494c-0.2415,0 -0.43751,0.19412 -0.43751,0.43332c0,0.2392 0.19601,0.43338 0.43751,0.43338h20.12498c0.2415,0 0.43751,-0.19418 0.43751,-0.43338c-0.00004,-0.2392 -0.19605,-0.43332 -0.43755,-0.43332z"
-                        fill="#121b23" fill-opacity="1"></path>
-                </g>
-              </svg>
+            <button id="deviceBugerMenu" class="burger-menu btn btn--clear">
+              <div class="burger">
+                <div class="burger-stack">
+                  <b class="srt">Toggle</b>
+                </div>
+              </div>
             </button>
+
           </div>
           <div class="header-nav">
             <ul class="nav-list">
               <li class="nav-el nav-el--simple">
                 <a href="index.html">
                   <div class="icon">
-                    <svg id="SVGDoc" width="21" height="21" xmlns="http://www.w3.org/2000/svg" version="1.1"
+                    <svg width="21" height="21" xmlns="http://www.w3.org/2000/svg" version="1.1"
                          xmlns:xlink="http://www.w3.org/1999/xlink"
                          viewBox="0 0 21 21">
                       <g>
@@ -109,7 +104,8 @@
                   </div>
                 </a>
               </li>
-              <li class="nav-el nav-el--simple nav-el--active"><a href="online-translate.html"><p>ონლაინ თარჯიმანი</p></a>
+              <li class="nav-el nav-el--simple nav-el--active"><a href="online-translate.html"><p>ონლაინ თარჯიმანი</p>
+              </a>
               </li>
               <li class="nav-el nav-el--simple nav-el--label"><a href="#/"><p>ბლოგი</p> <span
                       class="label">მალე</span></a>
@@ -129,19 +125,254 @@
 <!--endregion-->
 
 <!--region: content main area -->
-<div class="layout--content layout--order">
+<form class="layout--content layout--order">
   <div class="wrapper wrapper--sm">
     <div class="layout--order--content">
-      <div class="layout--order--view">
-        <div class="test">
-          h
+      <div class="layout--order--view m-list--30">
+        <!--region #1 block -->
+        <div class="order-block--main">
+          <div class="order-block--number"><p class="order-block--number--text">1</p></div>
+          <div class="order-block--title"><p class="title">დოკუმენტის ატვირთვა</p></div>
+          <div class="order-block--body order-block--body--p-25">
+            <div class="margin-v--7 padding-h--12">
+              <p>some text</p>
+            </div>
+            <div class="order-form--row">
+              <div class="order-form--col-1">
+                <label class="order-form--label">
+                  <input type="radio" name="1" class="radio"/>
+                  <div class="order-form--el column big">
+                    <div class="icon svg img">
+                      <img src="./images/icons/docs.svg" alt="">
+                    </div>
+                    <div class="text"><span>ატვირთე</span> <span>დოკუმენტი</span></div>
+                  </div>
+                </label>
+              </div>
+              <div class="order-form--divider flex align-items--center justify-content--center">
+                <p class="text">ან</p>
+              </div>
+              <div class="order-form--col-1">
+                <label class="order-form--label">
+                  <input type="radio" name="1" class="radio"/>
+                  <div class="order-form--el big column">
+                    <div class="icon svg img">
+                      <img src="./images/icons/text.svg" alt="">
+                    </div>
+                    <div class="text"><span>ატვირთე</span> <span>დოკუმენტი</span></div>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
         </div>
+        <!--endregion-->
+
+        <!--region #2 block -->
+        <div class="order-block--main">
+          <div class="order-block--number"><p class="order-block--number--text">2</p></div>
+          <div class="order-block--title"><p class="title">აირჩიეთ ენა</p></div>
+          <div class="order-block--body p-list--30 order-block--body--p-40">
+            <div class="order-form--label">
+              <div class="select-block--area">
+                <div class="select--block--label">რომელი ენიდან</div>
+                <div class="select-block--body">
+                  <select name="lang1">
+                    <option value="1" class="select-dropdown__list-item">რომელი ენიდან</option>
+                    <option value="2" class="select-dropdown__list-item">ინგლისური</option>
+                    <option value="3" class="select-dropdown__list-item">ქართული</option>
+                    <option value="4" class="select-dropdown__list-item">რუსული</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="order-form--label">
+              <div class="select-block--area">
+                <div class="select--block--label">რომელ ენაზე</div>
+                <div class="select-block--body">
+                  <select name="" id="2">
+                    <option value="1" class="select-dropdown__list-item">რომელ ენაზე</option>
+                    <option value="1" class="select-dropdown__list-item">ინგლისური</option>
+                    <option value="1" class="select-dropdown__list-item">ქართული</option>
+                    <option value="1" class="select-dropdown__list-item">რუსული</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--endregion-->
+
+        <!--region #3 block -->
+        <div class="order-block--main">
+          <div class="order-block--number"><p class="order-block--number--text">3</p></div>
+          <div class="order-block--title"><p class="title">დოკუმენტის ტიპი</p></div>
+          <div class="order-block--body p-list--30 order-block--body--p-30">
+            <div class="order-form--row">
+              <div class="order-form--col-1-h">
+                <label class="order-form--label">
+                  <input type="radio" name="3" class="radio"/>
+                  <div class="order-form--el">
+                    <div class="icon left img">
+                      <img src="./images/icons/docs.svg" alt="">
+                    </div>
+                    <div class="text">ატვირთე დოკუმენტი</div>
+                  </div>
+                </label>
+              </div>
+              <div class="order-form--col-1-h">
+                <label class="order-form--label">
+                  <input type="radio" name="3" class="radio"/>
+                  <div class="order-form--el">
+                    <div class="icon left img">
+                      <img src="./images/icons/law.svg" alt="">
+                    </div>
+                    <div class="text">იურიდიული</div>
+                  </div>
+                </label>
+              </div>
+              <div class="order-form--col-1-h">
+                <label class="order-form--label">
+                  <input type="radio" name="3" class="radio"/>
+                  <div class="order-form--el">
+                    <div class="icon left img">
+                      <img src="./images/icons/med.svg" alt="">
+                    </div>
+                    <div class="text">ტექნიკური</div>
+                  </div>
+                </label>
+              </div>
+              <div class="order-form--col-1-h">
+                <label class="order-form--label">
+                  <input type="radio" name="3" class="radio"/>
+                  <div class="order-form--el">
+                    <div class="icon left img">
+                      <img src="./images/icons/prular.svg" alt="">
+                    </div>
+                    <div class="text">ტექნიკური</div>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--endregion-->
+
+        <!--region #4 block -->
+        <div class="order-block--main">
+          <div class="order-block--number"><p class="order-block--number--text">4</p></div>
+          <div class="order-block--title"><p class="title">თარჯიმანი</p></div>
+          <div class="order-block--body p-list--30 order-block--body--p-25">
+            <div class="order-form--row">
+              <div class="order-form--col-1-h">
+                <label class="order-form--label">
+                  <input type="radio" name="4" class="radio"/>
+                  <div class="order-form--el">
+                    <div class="icon left img">
+                      <img src="./images/icons/docs.svg" alt="">
+                    </div>
+                    <div class="text"><span>პროფესიონალი</span> <span>თარჯიმანი</span></div>
+                  </div>
+                </label>
+              </div>
+              <div class="order-form--col-1-h">
+                <label class="order-form--label">
+                  <input type="radio" name="4" class="radio"/>
+                  <div class="order-form--el">
+                    <div class="icon left img">
+                      <img src="./images/icons/law.svg" alt="">
+                    </div>
+                    <div class="text"><span>სერტიფიცირებული</span> <span>თარჯიმანი</span></div>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--endregion-->
+
+        <!--region #5 block -->
+        <div class="order-block--main">
+          <div class="order-block--number"><p class="order-block--number--text">5</p></div>
+          <div class="order-block--title"><p class="title">დამატებითი სერვისები</p></div>
+          <div class="order-block--body p-list--30 order-block--body--p-30">
+            <div class="order-form--row flex column m-list--20">
+              <label class="order-form--label">
+                <div class="checkbox--area">
+                  <div class="checkbox--box layout--content">
+                    <div class="input-theme">
+                      <input type="checkbox">
+                      <div class="box"></div>
+                    </div>
+                  </div>
+                  <div class="checkbox--text">
+                    <span>სერტიფიცირებული</span> <span>თარჯიმანი</span>
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <!--endregion-->
+
+        <!--region #6 block -->
+        <div class="order-block--main">
+          <div class="order-block--number"><p class="order-block--number--text">6</p></div>
+          <div class="order-block--title"><p class="title">კომენტარი</p></div>
+          <div class="order-block--body p-list--30 order-block--body--p-30">
+            <div class="order-form--row flex column m-list--20">
+              <label class="order-form--label">
+                <div class="form-block--area">
+                  <div class="select--block--label">რომელ ენაზე</div>
+                  <div class="select-block--body">
+                    <textarea name="comment" id="comment" rows="10" class="theme--textarea"></textarea>
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <!--endregion-->
+
+        <!--region #7 block -->
+        <div class="order-block--main">
+          <div class="order-block--number"><p class="order-block--number--text">7</p></div>
+          <div class="order-block--title"><p class="title">მიწოდების ხანგრძლივობა</p></div>
+          <div class="order-block--body p-list--30 order-block--body--p-25">
+            <div class="order-form--row">
+              <div class="order-form--col-1-h">
+                <label class="order-form--label">
+                  <input type="radio" name="7" class="radio"/>
+                  <div class="order-form--el">
+                    <div class="text">1 დღე</div>
+                  </div>
+                </label>
+              </div>
+              <div class="order-form--col-1-h">
+                <label class="order-form--label">
+                  <input type="radio" name="7" class="radio"/>
+                  <div class="order-form--el">
+                    <div class="text">3 დღე</div>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--endregion-->
+
       </div>
       <div class="layout--order--bill">
         <div class="bill-block">
           <!--  form wrapping inside a `bill-block`  -->
           <form action="">
-            <div class="bill-block--head"><p>ფასი</p></div>
+            <div class="bill-block--head">
+              <p class="text">ფასი</p>
+              <div class="bill-block--line onDevice">
+                <div class="left-area"><p>ჯამი</p></div>
+                <div class="right-area"><p class="price"><b>45.4 ₾</b></p></div>
+              </div>
+            </div>
             <div class="bill-block--content">
               <div class="bill-block--line">
                 <div class="left-area"><p>სიტყვების რაოდენობა</p></div>
@@ -164,7 +395,7 @@
                   </label>
                 </div>
               </div>
-              <div class="bill-block--line">
+              <div class="bill-block--line hideDevice">
                 <div class="left-area"><p>ჯამი</p></div>
                 <div class="right-area"><p class="price"><b>45.4 ₾</b></p></div>
               </div>
@@ -179,7 +410,7 @@
       </div>
     </div>
   </div>
-</div>
+</form>
 <!--endregion-->
 
 <!--region: layout hidden assets -->

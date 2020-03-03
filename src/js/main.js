@@ -11,6 +11,7 @@ const initTestApp = () => {
 
   deviceBurgerMenu.addEventListener('click', () => {
     headerTarget.classList.toggle('layout--header-wrapper--opened');
+    deviceBurgerMenu.querySelector('.burger').classList.toggle('is-open');
   });
 
   const searchClearBTN = document.querySelector('#clear-btn');
@@ -55,4 +56,15 @@ const initTestApp = () => {
       blocksContent.classList.remove('hidden');
     });
   }
+
+  const billBlock = document.querySelector('.layout--order--bill');
+  const billBlockHead = document.querySelector('.bill-block--head');
+
+  if (billBlock && billBlockHead) {
+    billBlockHead.addEventListener('click', () => {
+      console.log('hit');
+      billBlock.classList.toggle('opened');
+    })
+  }
+
 };

@@ -29,6 +29,23 @@ body {
   @include flex;
 }
 
+.flex-el {
+  flex: 1;
+}
+
+.align-items {
+  &--center {
+    @include align-items(center);
+  }
+}
+
+
+.justify-content {
+  &--center {
+    @include justify-content(center);
+  }
+}
+
 .right-area {
   //margin-right: auto;
 }
@@ -66,4 +83,61 @@ ul.num-list {
 }
 
 .devHide {
+}
+
+.p-list {
+  @each $padd in $padding-list {
+    &--#{$padd} {
+      > * {
+        padding-top: px($padd);
+
+        &:first-child {
+          padding-top: 0;
+        }
+      }
+    }
+  }
+}
+
+.m-list {
+  @each $padd in $padding-list {
+    &--#{$padd} {
+      > * {
+        margin-top: px($padd);
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
+
+.theme--textarea {
+  border-radius: 15px;
+  border: 1px solid $color-gray-5;
+  background-color: #ffffff;
+  min-height: 77px;
+  height: 100%;
+  transition: all .125s ease-in-out;
+  width: 100%;
+}
+.margin-v {
+  @each $marg in $margins-list {
+    &--#{$marg} {
+      > * {
+        margin: px($marg) 0;
+      }
+    }
+  }
+}
+
+.padding-h {
+  @each $marg in $margins-list {
+    &--#{$marg} {
+      > * {
+        padding: 0 px($marg);
+      }
+    }
+  }
 }

@@ -30,6 +30,21 @@ $header-device-height: px(40);
   &--device {
     display: none;
 
+    .burger-menu {
+      @include size(50px);
+      @include flex-all;
+      padding: 15px;
+      position: relative;
+
+      svg {
+        width: 100%;
+      }
+      img {
+        height: 100%;
+        display: block;
+      }
+    }
+
     @include max-min(max px($device-tablet)) {
       @include flex-all;
       @include size(100%);

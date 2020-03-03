@@ -1,8 +1,16 @@
+$device-bill-head-height: 60;
+
 .layout {
   &--order {
     &--content {
       padding-top: 90px;
+      padding-bottom: 30px;
       @include flex;
+
+      @include max-min(max px($device-tablet)) {
+        padding-top: px(40);
+        padding-bottom: px($device-bill-head-height + 40);
+      }
     }
 
     &--view {
@@ -16,23 +24,100 @@
     &--bill {
       width: 350px;
       margin-left: 25px;
+      z-index: 55555;
+
+      @include max-min(max px($device-tablet - 1)) {
+        margin-left: 0;
+        position: fixed;
+        left: 0;
+        width: 100%;
+        height: initial;
+        bottom: px($device-bill-head-height);
+        transform: translate(0px, 100%);
+        transition: all .125s ease-in-out;
+      }
+
+      &.opened {
+
+        @include max-min(max px($device-tablet - 1)) {
+          margin-left: 0;
+          position: fixed;
+          left: 0;
+          width: 100%;
+          height: initial;
+          bottom: 0;
+          transform: translate(0px, 0);
+        }
+
+        .bill-block {
+          &--head {
+            .text {
+              opacity: 1;
+              font-size: 18px;
+            }
+          }
+
+          &--end {
+            border-radius: 0 !important;
+          }
+        }
+      }
     }
 
     .bill-block {
       width: 100%;
       position: sticky;
-      top: 130px;
+      top: 121px;
       left: 0;
 
       &--head {
         height: 55px;
-        border-radius: 15px 15px 0 0;
         background-color: rgba($color-blue, .2);
-        color: $color-gray-3;
-        font-family: $BPG-Arial;
-        font-size: 13px;
-        font-weight: 400;
+        border-radius: 15px 15px 0 0;
         padding: 20px;
+
+        .text {
+          color: $color-gray-3;
+          font-family: $BPG-Arial;
+          font-size: 13px;
+          font-weight: 400;
+        }
+
+        .onDevice {
+          display: none;
+        }
+
+        @include max-min(max px($device-tablet - 1)) {
+          height: px($device-bill-head-height);
+          position: relative;
+          background-color: $oc-white;
+          box-shadow: 0 -10px 14px -10px rgba($oc-black, 0.1);
+          padding: 0;
+
+          &:after {
+            content: '';
+            width: 70px;
+            height: 3px;
+            display: block;
+            background-color: $color-gray-7;
+            border-radius: 4px;
+            position: absolute;
+            left: 50%;
+            top: 14px;
+            transform: translateX(-50%);
+          }
+
+          .text {
+            transition: all .125s ease-in-out;
+            opacity: 0;
+            display: none;
+          }
+          .onDevice {
+            display: flex;
+            background-color: transparent !important;
+          }
+        }
+
       }
 
       &--content {
@@ -103,6 +188,15 @@
         }
       }
 
+      @include max-min(max px($device-tablet - 1)) {
+      }
+
+    }
+
+    .hideDevice {
+      @include max-min(max px($device-tablet)) {
+        display: none;
+      }
     }
 
     .input-theme {
@@ -114,7 +208,7 @@
       .box {
         @include size(17px);
         border-radius: 3px;
-        box-shadow:inset 0 0 0 1px #dee2e6, inset 0 0 0 3px #FFF;
+        box-shadow: inset 0 0 0 1px #dee2e6, inset 0 0 0 3px #FFF;
         background-color: $oc-white;
       }
 
@@ -137,7 +231,6 @@
 
 
     }
-
   }
 }
 

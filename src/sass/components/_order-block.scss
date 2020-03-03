@@ -1,0 +1,357 @@
+$def-padding: 30;
+$number-size: 50;
+$form-el-height-min: 77;
+$form-el-height-big: 180;
+
+$padding-size: 20, 25, 30, 35, 40, 45;
+
+$dev-breakpoint: 880;
+
+
+.order-block {
+  &--main {
+    position: relative;
+    width: 100%;
+    border-radius: 15px;
+    background-color: $oc-white;
+    min-height: px($number-size);
+    padding: px($def-padding);
+
+  }
+
+  &--body {
+    @each $padd in $padding-size {
+      &--p-#{$padd} {
+        padding-top: px($padd);
+      }
+    }
+  }
+
+  &--number {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: px($number-size);
+    height: px($number-size);
+    border-radius: 15px 0;
+    background-color: $color-blue;
+    @include flex-all;
+
+    &--text {
+      color: $oc-white;
+      font-family: $BPG-Arial;
+      font-size: 17px;
+      line-height: 17px;
+      font-weight: 400;
+    }
+  }
+
+  &--title {
+    color: $color-gray-3;
+    font-family: $BPG-Arial;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 400;
+    margin-top: px($def-padding - 34);
+    padding-left: px(80 - $def-padding);
+  }
+}
+
+
+.order-form {
+  &--row {
+    @include flex;
+    flex-wrap: wrap;
+
+    @include max-min(max px($dev-breakpoint)) {
+      @include flex-direction(column)
+    }
+
+    &.column {
+      @include flex-direction(column);
+    }
+  }
+
+  &--divider {
+    padding: 0 19px;
+    @include max-min(max px($dev-breakpoint)) {
+      padding: 19px 0px;
+    }
+
+    .text {
+      color: $color-gray-3;
+      font-family: $BPG-Arial;
+      font-size: 17px;
+      font-weight: 400;
+    }
+  }
+
+  &--col-1 {
+    flex: 1;
+    padding-left: 15px;
+
+    @include max-min(max px($dev-breakpoint)) {
+      padding-left: 0;
+    }
+
+    &:nth-child(-n+2) {
+      padding-top: 0;
+    }
+
+    &:nth-child(odd) {
+      padding-left: 0;
+    }
+
+  }
+
+  &--col-1-h {
+    flex: 50%;
+    padding-top: 15px;
+    padding-left: 15px;
+
+    @include max-min(max px($dev-breakpoint)) {
+      padding-left: 0px;
+    }
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:nth-child(-n+2) {
+      padding-top: 0;
+      @include max-min(max px($dev-breakpoint)) {
+        padding-top: 15px;
+      }
+    }
+
+    &:nth-child(odd) {
+      padding-left: 0;
+    }
+
+  }
+
+  &--el {
+    border-radius: 15px;
+    border: 1px solid #dee2e6;
+    background-color: $oc-white;
+    min-height: px($form-el-height-min);
+    height: 100%;
+    @include flex-all;
+    transition: all .125s ease-in-out;
+    cursor: pointer;
+    position: relative;
+    padding-left: 45px;
+    padding-right: 45px;
+
+    &.column {
+      @include flex-direction(column);
+    }
+
+    &.big {
+      height: px($form-el-height-big);
+
+      .icon {
+        margin-bottom: 17px;
+        @include size(40px);
+
+        &.img {
+          @include size(40px);
+          @include flex-all;
+
+          img {
+            height: 100%;
+            display: block;
+          }
+        }
+
+        &.svg {
+          @include size(40px);
+          @include flex-all;
+
+          svg {
+            height: 100%;
+
+            path {
+              fill: $color-gray-2;
+            }
+          }
+        }
+      }
+    }
+
+    .text {
+      color: $color-gray-2;
+      font-family: $BPG-Arial;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 24px;
+      transition: color .125s ease-in-out;
+      text-align: center;
+      max-width: 80%;
+      overflow: hidden;
+      word-break: break-word;
+      text-overflow: ellipsis;
+    }
+
+    &:hover {
+      border-color: darken(#dee2e6, 4%);
+
+      .text {
+        color: darken($color-gray-2, 4%);
+      }
+    }
+
+    &.active {
+      border: 1px solid $color-blue;
+      background-color: rgba(86, 159, 236, 0.1);
+
+      .text {
+        color: $color-blue;
+      }
+
+      .icon {
+        svg {
+          path {
+            fill: $color-blue;
+          }
+        }
+      }
+    }
+
+    .icon {
+      @include size(24px);
+      @include flex-all;
+
+      .img {
+        height: 100%;
+        @include flex-all;
+
+        img {
+          height: 100%;
+          display: block;
+        }
+      }
+
+      &.left {
+        position: absolute;
+        left: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        @include max-min(max px(900)) {
+          left: 20px;
+        }
+      }
+
+      svg {
+        height: 100%;
+        fill: $color-gray-1;
+      }
+    }
+  }
+
+  &--label {
+    position: relative;
+
+    input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+
+      &:checked {
+        & + {
+          .order-form {
+            &--el {
+              border: 1px solid $color-blue;
+              background-color: rgba(86, 159, 236, 0.1);
+
+              .text {
+                color: $color-blue;
+              }
+
+              .icon {
+                svg {
+                  path {
+                    fill: $color-blue;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .input-wrap {
+      @include size(100%);
+      overflow: hidden;
+
+      .radio {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+      }
+    }
+
+    .select-block {
+      &--area {
+      }
+
+      &--label {
+        color: $color-gray-3;
+        font-family: $BPG-Arial;
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+      &--body {
+        padding-top: 10px;
+      }
+
+      &--body {
+        width: 100%;
+
+        select {
+          width: 100%;
+        }
+      }
+    }
+
+    .checkbox {
+      &--area {
+        @include flex;
+
+        .input-theme {
+          margin-top: 3px;
+        }
+      }
+
+      &--box {
+        margin-right: 20px;
+      }
+
+      &--text {
+        color: #787d88;
+        font-family: $BPG-Arial;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 24px;
+        transition: color .125s ease-in-out;
+        text-align: center;
+        word-break: break-all;
+      }
+    }
+
+    .form-block {
+      &--area {
+        textarea {
+        }
+      }
+    }
+
+  }
+
+}
+
+

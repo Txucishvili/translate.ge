@@ -18,6 +18,7 @@
 @import "layout/wrappers";
 
 @import "layout/header/header";
+@import "layout/header/burger-menu";
 @import "layout/header/header-logo";
 @import "layout/header/header-nav";
 @import "layout/header/header-switcher";
@@ -33,3 +34,4 @@
 @import "components/layout-block-content";
 @import "components/online-translate";
 @import "components/order-content";
+@import "components/order-block";
