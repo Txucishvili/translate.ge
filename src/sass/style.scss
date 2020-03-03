@@ -10,6 +10,9 @@
 @include font-face($SamsungSans-Medium, $SamsungSans-Medium, $SamsungSans-path, normal, 400, 'noicon', woff);
 @include font-face($SamsungSans-Bold, $SamsungSans-Bold, $SamsungSans-path, normal, 400, 'noicon', woff);
 
+@include font-face($NotoSans-Regular, $NotoSans-Regular, $NotoSans-Regular-path, normal, 400, 'noicon', ttf);
+
+
 // theme
 @import "theme/select-dropdown";
 

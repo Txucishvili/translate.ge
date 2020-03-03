@@ -39,7 +39,7 @@ $dev-breakpoint: 880;
 
     &--text {
       color: $oc-white;
-      font-family: $BPG-Arial;
+      font-family: $NotoSans-Regular;
       font-size: 17px;
       line-height: 17px;
       font-weight: 400;
@@ -48,7 +48,7 @@ $dev-breakpoint: 880;
 
   &--title {
     color: $color-gray-3;
-    font-family: $BPG-Arial;
+    font-family: $NotoSans-Regular;
     font-size: 16px;
     line-height: 26px;
     font-weight: 400;
@@ -80,7 +80,7 @@ $dev-breakpoint: 880;
 
     .text {
       color: $color-gray-3;
-      font-family: $BPG-Arial;
+      font-family: $NotoSans-Regular;
       font-size: 17px;
       font-weight: 400;
     }
@@ -211,9 +211,10 @@ $dev-breakpoint: 880;
 
           svg {
             height: 100%;
+            width: 100%;
 
             path {
-              fill: $color-gray-2;
+              fill: $color-gray-2 ;
             }
           }
         }
@@ -222,7 +223,7 @@ $dev-breakpoint: 880;
 
     .text {
       color: $color-gray-2;
-      font-family: $BPG-Arial;
+      font-family: $NotoSans-Regular;
       font-size: 13px;
       font-weight: 400;
       line-height: 24px;
@@ -284,8 +285,11 @@ $dev-breakpoint: 880;
       }
 
       svg {
+        max-width: 100%;
         height: 100%;
-        fill: $color-gray-1;
+        path {
+          fill: $color-gray-2;
+        }
       }
     }
   }
@@ -349,7 +353,7 @@ $dev-breakpoint: 880;
 
       &--label {
         color: $color-gray-3;
-        font-family: $BPG-Arial;
+        font-family: $NotoSans-Regular;
         font-size: 14px;
         font-weight: 400;
       }
@@ -382,7 +386,7 @@ $dev-breakpoint: 880;
 
       &--text {
         color: #787d88;
-        font-family: $BPG-Arial;
+        font-family: $NotoSans-Regular;
         font-size: 13px;
         font-weight: 400;
         line-height: 24px;
