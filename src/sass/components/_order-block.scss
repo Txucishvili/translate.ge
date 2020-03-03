@@ -16,7 +16,9 @@ $dev-breakpoint: 880;
     background-color: $oc-white;
     min-height: px($number-size);
     padding: px($def-padding);
-
+    @include max-min(max px($device-tablet)) {
+      padding: px($def-padding - 10);
+    }
   }
 
   &--body {
@@ -43,6 +45,21 @@ $dev-breakpoint: 880;
       font-size: 17px;
       line-height: 17px;
       font-weight: 400;
+      @include max-min(max px($device-tablet)) {
+        font-size: 13px;
+      }
+
+      p {
+        font-size: inherit;
+        font-family: inherit;
+        color: inherit;
+      }
+    }
+
+    @include max-min(max px($device-tablet)) {
+      font-size: 13px;
+      min-width: px($number-size - 10);
+      height: px($number-size - 10);
     }
   }
 
@@ -54,6 +71,58 @@ $dev-breakpoint: 880;
     font-weight: 400;
     margin-top: px($def-padding - 34);
     padding-left: px(80 - $def-padding);
+    @include flex;
+
+    p {
+      font-size: inherit;
+      font-family: inherit;
+      color: inherit;
+    }
+
+    .info-block {
+      &--position {
+        margin-left: auto;
+      }
+
+      &--item {
+        @include size(21px);
+        background-color: $color-gray-1;
+        border-radius: 4px;
+        @include flex-all;
+        cursor: pointer;
+
+        &.active {
+          background-color: darken($color-gray-1, 6%);
+
+          svg {
+            path {
+              fill: darken($color-gray-1, 56%);
+            }
+          }
+        }
+
+        &:hover {
+          background-color: darken($color-gray-1, 9%);
+
+          svg {
+            path {
+              fill: darken($color-gray-2, 38%);
+            }
+          }
+        }
+
+      }
+
+      &--icon {
+        @include flex-all;
+        @include size(21px);
+
+      }
+    }
+
+    @include max-min(max px($device-tablet)) {
+      font-size: 15px;
+    }
   }
 }
 
@@ -149,13 +218,16 @@ $dev-breakpoint: 880;
     &:focus-within {
       border-color: $color-blue;
     }
+
     + .order-form--el {
       opacity: 0;
       transition: all .125s ease-in-out;
+      border-color: transparent !important;
     }
+
     &:not(empty) {
       + .order-form--el {
-        opacity: 1 !important;
+        opacity: 1;
       }
     }
 
@@ -214,7 +286,7 @@ $dev-breakpoint: 880;
             width: 100%;
 
             path {
-              fill: $color-gray-2 ;
+              fill: $color-gray-2;
             }
           }
         }
@@ -287,10 +359,15 @@ $dev-breakpoint: 880;
       svg {
         max-width: 100%;
         height: 100%;
+
         path {
           fill: $color-gray-2;
         }
       }
+    }
+
+    @include max-min(max px($device-tablet)) {
+      border-radius: px(10);
     }
   }
 
@@ -349,6 +426,7 @@ $dev-breakpoint: 880;
 
     .select-block {
       &--area {
+
       }
 
       &--label {
@@ -356,14 +434,28 @@ $dev-breakpoint: 880;
         font-family: $NotoSans-Regular;
         font-size: 14px;
         font-weight: 400;
-      }
-
-      &--body {
-        padding-top: 10px;
+        @include max-min(max px($device-tablet)) {
+          font-size: 11px;
+        }
       }
 
       &--body {
         width: 100%;
+        padding-top: 10px;
+
+        textarea {
+          padding: 21px 20px;
+          color: $color-gray-3;
+          outline: none;
+
+          &::placeholder {
+            color: $color-gray-2;
+          }
+
+          @include max-min(max px($device-tablet)) {
+            padding: 16px 15px;
+          }
+        }
 
         select {
           width: 100%;

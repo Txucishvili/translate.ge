@@ -48,6 +48,14 @@
         transition: all .125s ease-in-out;
         transform: translateY(-50%) scale(0);
 
+        @include max-min(max px($device-tablet)) {
+          right: 20px;
+        }
+
+        .icon {
+          @include flex-all;
+        }
+
         &.show {
           opacity: 1;
           transform: translateY(-50%) scale(1);
