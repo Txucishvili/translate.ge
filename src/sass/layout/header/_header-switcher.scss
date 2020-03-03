@@ -4,6 +4,7 @@ $switcher-clip-path-size: 18;
 
 .header {
   &--switcher {
+
     &--content {
       position: relative;
       z-index: 1;
@@ -118,6 +119,20 @@ $switcher-clip-path-size: 18;
 
     }
 
+    &--main {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: all .125s ease-in-out;
+      z-index: -1;
+
+      .header--switcher--wrap {}
+
+      &.active {
+        top: 100%;
+      }
+    }
   }
 }
 
