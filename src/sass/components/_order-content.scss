@@ -3,9 +3,13 @@ $device-bill-head-height: 60;
 .layout {
   &--order {
     &--content {
-      padding-top: 90px;
-      padding-bottom: 30px;
       @include flex;
+      position: relative;
+
+      &--padding {
+        padding-top: 90px;
+        padding-bottom: 30px;
+      }
 
       @include max-min(max px($device-tablet)) {
         padding-top: px(40);
@@ -69,7 +73,8 @@ $device-bill-head-height: 60;
     .bill-block {
       width: 100%;
       position: sticky;
-      top: 121px;
+      //top: 121px;
+      top: px($header-height + 40);
       left: 0;
 
       &--head {

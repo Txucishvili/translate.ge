@@ -133,11 +133,19 @@ ul.num-list {
 }
 
 .padding-h {
-  @each $marg in $margins-list {
-    &--#{$marg} {
+  @each $padd in $paddings-list {
+    &--#{$padd} {
       > * {
-        padding: 0 px($marg);
+        padding: 0 px($padd);
       }
+    }
+  }
+}
+
+.padding-t {
+  @each $padd in $padding-tops {
+    &--#{$padd} {
+        padding-top: px($padd);
     }
   }
 }
