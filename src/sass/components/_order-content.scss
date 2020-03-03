@@ -25,7 +25,7 @@ $device-bill-head-height: 60;
       width: 350px;
       margin-left: 25px;
       z-index: 55555;
-      background-color: $oc-white;
+      border-radius: 15px;
 
       @include max-min(max px($device-tablet - 1)) {
         margin-left: 0;
@@ -36,6 +36,7 @@ $device-bill-head-height: 60;
         bottom: px($device-bill-head-height);
         transform: translate(0px, 100%);
         transition: all .125s ease-in-out;
+        background-color: $oc-white;
       }
 
       &.opened {
