@@ -187,6 +187,13 @@ $alert-colors: (
     warning: (color: $oc-orange-4),
 );
 
+$alert-colors-bg: (
+    default: (color: $oc-gray-1),
+    success: (color: $oc-green-1),
+    error: (color: $oc-red-1),
+    warning: (color: $oc-orange-1),
+);
+
 @each $key, $value in $alert-colors {
   @if map-has-key($alert-colors, $key) {
     .text {
@@ -199,12 +206,12 @@ $alert-colors: (
   }
 }
 
-@each $key, $value in $alert-colors {
-  @if map-has-key($alert-colors, $key) {
+@each $key, $value in $alert-colors-bg {
+  @if map-has-key($alert-colors-bg, $key) {
     .bg {
       &--color {
         &--#{$key} {
-          background-color: map-get(map-get($alert-colors, $key), color);
+          background-color: map-get(map-get($alert-colors-bg, $key), color);
         }
       }
     }
