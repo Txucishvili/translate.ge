@@ -55,7 +55,6 @@ $switcher-clip-path-size: 18;
       &--area {
         @include flex-all;
         height: 60px;
-        padding: 0 20px;
 
         @include max-min(max px($device-tablet - $search-result-device-ind)) {
           height: 36px;
@@ -66,21 +65,22 @@ $switcher-clip-path-size: 18;
 
       &--item {
         flex: 1;
-        color: $color-gray-3;
         font-family: $SamsungSans-Regular;
         font-size: 15px;
         font-weight: 500;
         cursor: pointer;
         transition: all .125s ease;
         height: 100%;
+        @include disableDeviceOutline;
+        color: lighten($color-gray-2, 11%);
 
         @include max-min(max px($device-tablet - $search-result-device-ind)) {
           font-size: 12px;
         }
 
-        &:hover {
+        &:hover, &:active {
           //background-color: rgba($color-gray-2, .2);
-          color: lighten($color-gray-2, 11%);
+          color: $color-gray-3;
         }
 
         &--active {
