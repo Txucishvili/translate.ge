@@ -22,11 +22,7 @@ $dev-breakpoint: 880;
   }
 
   &--body {
-    @each $padd in $padding-size {
-      &--p-#{$padd} {
-        padding-top: px($padd);
-      }
-    }
+
   }
 
   &--number {

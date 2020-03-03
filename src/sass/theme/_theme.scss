@@ -92,7 +92,13 @@ ul.num-list {
 .m-list {
   @each $padd in $margin-top-list {
     &--#{$padd} {
-      margin-top: px($padd);
+      > * {
+        margin-top: px($padd);
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
     }
   }
 }
@@ -119,49 +125,88 @@ ul.num-list {
   }
 }
 
-.margin-v {
-  @each $marg in $margin-v-list {
-    &--#{$marg} {
-      > * {
-        margin: px($marg) 0;
+.margin {
+  &--top {
+    &--list {
+      @each $padd in $margin-top-list {
+        &--#{$padd} {
+          > * {
+            margin-top: px($padd);
+
+            &:first-child {
+              margin-top: 0;
+            }
+          }
+        }
       }
     }
   }
 }
 
-.margin-t {
+.padding {
+  &--top {
+    &--list {
+      @each $padd in $margin-top-list {
+        &--#{$padd} {
+          > * {
+            padding-top: px($padd);
+
+            &:first-child {
+              padding-top: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @each $padd in $padding-v-range {
+    &--top {
+      &--#{$padd} {
+        padding-top: px($padd);
+      }
+    }
+
+    &--bottom {
+      &--#{$padd} {
+        padding-bottom: px($padd);
+      }
+    }
+  }
   @each $padd in $margin-top-list {
     &--#{$padd} {
-      margin-top: px($padd);
+      padding: px($padd);
+    }
+  }
+}
 
-      &:first-child {
+$alert-colors: (
+    default: (color: $color-gray-4),
+    success: (color: $oc-green-4),
+    error: (color: $oc-red-4),
+    warning: (color: $oc-orange-4),
+);
+
+@each $key, $value in $alert-colors {
+  @if map-has-key($alert-colors, $key) {
+    .text {
+      &--color {
+        &--#{$key} {
+          color: map-get(map-get($alert-colors, $key), color);
+        }
       }
     }
   }
 }
 
-.padding-h {
-  @each $padd in $padding-h-list {
-    &--#{$padd} {
-      > * {
-        padding: 0 px($padd);
+@each $key, $value in $alert-colors {
+  @if map-has-key($alert-colors, $key) {
+    .bg {
+      &--color {
+        &--#{$key} {
+          background-color: map-get(map-get($alert-colors, $key), color);
+        }
       }
-    }
-  }
-}
-
-.padding-t {
-  @each $padd in $padding-v-range {
-    &--#{$padd} {
-      padding-top: px($padd);
-    }
-  }
-}
-
-.padding-b {
-  @each $padd in $padding-v-range {
-    &--#{$padd} {
-      padding-bottom: px($padd);
     }
   }
 }
