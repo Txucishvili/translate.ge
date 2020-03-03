@@ -7,8 +7,9 @@ $header-device-height: px(40);
     background-color: $oc-white;
     margin-top: 0;
     transition: margin-top .125s ease-in-out;
-    z-index: 2;
+    z-index: 0;
     position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
   }
 
   &--content {

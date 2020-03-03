@@ -130,6 +130,37 @@ $dev-breakpoint: 880;
 
   }
 
+  &--textarea {
+    border-radius: 15px;
+    border: 1px solid #dee2e6;
+    background-color: #ffffff;
+    min-height: 77px;
+    height: 100%;
+    display: block;
+    width: 100%;
+    outline: none;
+    padding: 20px;
+    transition: all .125s ease-in-out;
+
+    &:hover {
+      border-color: darken(#dee2e6, 9%);
+    }
+
+    &:focus-within {
+      border-color: $color-blue;
+    }
+    + .order-form--el {
+      opacity: 0;
+      transition: all .125s ease-in-out;
+    }
+    &:not(empty) {
+      + .order-form--el {
+        opacity: 1 !important;
+      }
+    }
+
+  }
+
   &--el {
     border-radius: 15px;
     border: 1px solid #dee2e6;
@@ -142,6 +173,16 @@ $dev-breakpoint: 880;
     position: relative;
     padding-left: 45px;
     padding-right: 45px;
+
+    &.bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-color: transparent;
+      background-color: transparent;
+      width: 100%;
+      height: 100%;
+    }
 
     &.column {
       @include flex-direction(column);
@@ -251,6 +292,13 @@ $dev-breakpoint: 880;
 
   &--label {
     position: relative;
+
+    &.textarea {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      @include flex;
+    }
 
     input {
       position: absolute;
