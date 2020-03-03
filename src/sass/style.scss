@@ -5,6 +5,8 @@
 // theme conf
 @import "variables";
 
+@import url("https://gist.githubusercontent.com/Txucishvili/4eedb359aeab657f3062e69d02794d94/raw/a03e0de3eb4fc03a64e2f66ad6d3ce9afdbaf985/translate-override.css");
+
 @include font-face($SamsungSans-Light, $SamsungSans-Light, $SamsungSans-path, normal, 400, 'noicon', woff);
 @include font-face($SamsungSans-Regular, $SamsungSans-Regular, $SamsungSans-path, normal, 400, 'noicon', woff);
 @include font-face($SamsungSans-Medium, $SamsungSans-Medium, $SamsungSans-path, normal, 400, 'noicon', woff);
