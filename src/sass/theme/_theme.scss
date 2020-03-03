@@ -121,6 +121,17 @@ ul.num-list {
   height: 100%;
   transition: all .125s ease-in-out;
   width: 100%;
+  &::placeholder {
+    color: $color-gray-2;
+  }
+
+  &:hover {
+    border-color: darken($color-gray-5, 9%);
+  }
+
+  &:focus-within {
+    border-color: $color-blue;
+  }
 }
 .margin-v {
   @each $marg in $margins-list {

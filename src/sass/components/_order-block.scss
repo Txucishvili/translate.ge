@@ -246,6 +246,7 @@ $dev-breakpoint: 880;
     position: relative;
     padding-left: 45px;
     padding-right: 45px;
+    @include disableDeviceOutline;
 
     &.bg {
       position: absolute;
@@ -451,6 +452,10 @@ $dev-breakpoint: 880;
 
           &::placeholder {
             color: $color-gray-2;
+          }
+
+          &:focus-within {
+            border-color: $color-blue;
           }
 
           @include max-min(max px($device-tablet)) {
