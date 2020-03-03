@@ -92,13 +92,7 @@ ul.num-list {
 .m-list {
   @each $padd in $margin-top-list {
     &--#{$padd} {
-      > * {
-        margin-top: px($padd);
-
-        &:first-child {
-          margin-top: 0;
-        }
-      }
+      margin-top: px($padd);
     }
   }
 }
@@ -111,6 +105,7 @@ ul.num-list {
   height: 100%;
   transition: all .125s ease-in-out;
   width: 100%;
+
   &::placeholder {
     color: $color-gray-2;
   }
@@ -137,12 +132,9 @@ ul.num-list {
 .margin-t {
   @each $padd in $margin-top-list {
     &--#{$padd} {
-      > * {
-        margin-top: px($padd);
+      margin-top: px($padd);
 
-        &:first-child {
-          margin-top: 0;
-        }
+      &:first-child {
       }
     }
   }
