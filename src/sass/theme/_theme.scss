@@ -6,6 +6,9 @@ body {
   font-size: 16px;
   color: $color-gray-3;
   background-color: $color-gray-1;
+  //@debug color.adjust(#6b717f, $red: 15); // #7a717f
+  //@debug color.adjust(#d2e1dd, $red: -10, $blue: 10); // #c8e1e7
+  //@debug color.adjust(#998099, $lightness: -30%, $alpha: -0.4); // rgba(71, 57, 71, 0.6)
 
   &.static-scroll {
     overflow-y: scroll;
@@ -94,6 +97,18 @@ ul.num-list {
 .devHide {
 }
 
+.block-title {
+  margin: 12px 0;
+  font-family: $NotoSans-Regular;
+  font-size: 16px;
+  color: $color-gray-2;
+}
+
+hr {
+  border-top: 1px solid $color-gray-5;
+  border-bottom: none;
+}
+
 .m-list {
   @each $padd in $margin-top-list {
     &--#{$padd} {
@@ -102,6 +117,20 @@ ul.num-list {
 
         &:first-child {
           margin-top: 0;
+        }
+      }
+    }
+
+    &--d {
+      @include max-min(max px(990)) {
+        &--#{$padd} {
+          > * {
+            margin-top: px($padd);
+
+            &:first-child {
+              margin-top: 0;
+            }
+          }
         }
       }
     }
@@ -143,6 +172,12 @@ ul.num-list {
             }
           }
         }
+      }
+    }
+
+    @each $padd in $margin-top-list {
+      &--#{$padd} {
+          margin-top: px($padd);
       }
     }
   }
@@ -220,5 +255,16 @@ $alert-colors-bg: (
         }
       }
     }
+  }
+}
+
+$custom-padder: 15;
+
+.custom-row  {
+  margin-right: - px($custom-padder / 2);
+  margin-left: - px($custom-padder / 2);
+  *[class*=col-] {
+    padding-left: px($custom-padder / 2);
+    padding-right: px($custom-padder / 2);
   }
 }

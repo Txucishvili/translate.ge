@@ -15,6 +15,8 @@
 @include font-face($NotoSans-Regular, $NotoSans-Regular, $NotoSans-Regular-path, normal, 400, 'noicon', ttf);
 
 
+@import "~bootstrap/scss/bootstrap-grid";
+
 // theme
 @import "theme/select-dropdown";
 
@@ -40,3 +42,4 @@
 @import "components/online-translate";
 @import "components/order-content";
 @import "components/order-block";
+@import "components/upload-file-item";

@@ -228,6 +228,10 @@ $dev-breakpoint: 880;
       }
     }
 
+    @include max-min(max px($device-tablet)) {
+      border-radius: 10px;
+    }
+
   }
 
   &--el {

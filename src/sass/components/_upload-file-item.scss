@@ -1,0 +1,88 @@
+.upload-file {
+  &--list {
+  }
+
+  &--item {
+    padding: 12px 15px;
+    border: 1px solid rgba($color-gray-2, .5);
+    background-color: rgba($color-gray-1, .5);
+    border-radius: 12px;
+    line-height: 16px;
+    font-size: 15px;
+    font-family: $NotoSans-Regular;
+    color: $color-gray-2;
+    width: 100%;
+    transition: all .125s ease-in-out;
+    max-width: 665px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @include max-min(max px($device-tablet)) {
+      border-radius: 7px;
+    }
+
+    &:hover {
+      background-color: rgba($color-gray-1, .89);
+    }
+
+    .name {
+      font-family: inherit;
+      font-size: inherit;
+      line-height: 24px;
+      color: inherit;
+      //max-width: 90%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      flex: 1;
+      height: 25px;
+      position: relative;
+      p {
+        position: absolute;
+        top: 0;
+        left: 0;
+        text-overflow: inherit;
+        overflow: inherit;
+        width: 100%;
+      }
+    }
+
+    .btn {
+      @include flex-all;
+      cursor: pointer;
+    }
+
+    .btn-icon {
+
+      @include size(24px);
+
+      img {
+        height: 100%;
+        display: block;
+      }
+    }
+
+    .icon {
+      @include size(24px);
+      @include flex-all;
+
+      margin-right: 15px;
+
+      img {
+        height: 100%;
+        display: block;
+      }
+    }
+
+
+    .left-area {
+      @include flex;
+      @include align-items(center);
+      flex: 1;
+      //max-width: 80%;
+      position: relative;
+    }
+
+  }
+
+
+}
