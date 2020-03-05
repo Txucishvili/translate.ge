@@ -375,6 +375,7 @@ $dev-breakpoint: 880;
 
   &--label {
     position: relative;
+    display: block;
 
     &.textarea {
       position: relative;
