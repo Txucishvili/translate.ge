@@ -2,4 +2,6 @@
 /dist
 /node_modules
 /package-lock.json
+/src/assets/ignore
+/src/images/icons/set
 webpack.configx.js
