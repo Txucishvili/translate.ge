@@ -31,6 +31,7 @@ $device-bill-head-height: 60;
       margin-left: 25px;
       z-index: 55555;
       border-radius: 15px;
+      pointer-events: none;
 
       @include max-min(max px($device-tablet - 1)) {
         margin-left: 0;
@@ -42,6 +43,7 @@ $device-bill-head-height: 60;
         transform: translate(0px, 100%);
         transition: all .125s ease-in-out;
         background-color: $oc-white;
+        pointer-events: initial;
       }
 
       &.opened {
@@ -77,12 +79,26 @@ $device-bill-head-height: 60;
       //top: 121px;
       top: px($header-height + 40);
       left: 0;
+      pointer-events: none;
+
+      > * {
+        pointer-events: initial;
+      }
+
+      @include max-min(max px($device-tablet)) {
+        pointer-events: initial;
+      }
 
       &--head {
         height: 55px;
         background-color: rgba($color-blue, .2);
         border-radius: 15px 15px 0 0;
         padding: 20px;
+        pointer-events: none;
+
+        @include max-min(max px($device-tablet)) {
+          pointer-events: initial;
+        }
 
         .text {
           color: $color-gray-3;

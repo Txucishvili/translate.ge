@@ -73,6 +73,7 @@ $dev-breakpoint: 880;
       font-size: inherit;
       font-family: inherit;
       color: inherit;
+      padding-right: 7px;
     }
 
     .info-block {
@@ -268,6 +269,17 @@ $dev-breakpoint: 880;
       .icon {
         margin-bottom: 17px;
         @include size(40px);
+        color: $color-gray-2;
+        transition: all .125s ease-in-out;
+
+        //&:hover {
+          //color: $color-blue;
+        //}
+
+        font-size: px(40);
+
+        &.ficons {
+        }
 
         &.img {
           @include size(40px);
@@ -326,6 +338,8 @@ $dev-breakpoint: 880;
       }
 
       .icon {
+        color: $color-blue;
+
         svg {
           path {
             fill: $color-blue;

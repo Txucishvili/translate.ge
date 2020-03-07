@@ -1,5 +1,13 @@
 // @init
 
+$icons: (
+			"draw": 		 (after: "\e907"),
+			"file": 		 (after: "\e906"),
+			"image": 		 (after: "\e90f"),
+			"x": 		 (after: "\f001", before: "\f001"),
+);
+
+
 // fonts
 $SamsungSans-path: '../assets/fonts/SamsungSans/';
 $SamsungSans-Light: 'SamsungSans-Light';
@@ -9,6 +17,10 @@ $SamsungSans-Bold: 'SamsungSans-Bold';
 
 $NotoSans-Regular-path: '../assets/fonts/NotoSans/';
 $NotoSans-Regular: 'NotoSans-Regular';
+
+// icomoon font generator
+$icomoon: 'icomoon';
+$icomoon_path: '../assets/fonts/icomoon/';
 
 // theme
 $wrapper-size: 1100;

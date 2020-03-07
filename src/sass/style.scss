@@ -13,6 +13,7 @@
 @include font-face($SamsungSans-Bold, $SamsungSans-Bold, $SamsungSans-path, normal, 400, 'noicon', woff);
 
 @include font-face($NotoSans-Regular, $NotoSans-Regular, $NotoSans-Regular-path, normal, 400, 'noicon', ttf);
+@include font-face($icomoon, $icomoon, $icomoon_path, normal, 400, font-icon 'ficon' $icons, ttf svg woff oet);
 
 
 @import "~bootstrap/scss/bootstrap-grid";
