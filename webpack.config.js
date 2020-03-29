@@ -23,7 +23,7 @@ module.exports = (env, argv) => {
     mode: argv.mode,
     devtool: isDevelopment
       ? 'source-map'
-      : '#eval-source-map',
+      : '',
     devServer: {
       stats: {
         children: false,
